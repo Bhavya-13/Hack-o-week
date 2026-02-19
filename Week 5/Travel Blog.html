@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Simple Travel Blog</title>
+
+<style>
+a{
+text-decoration:none;
+color:rgb(0, 72, 255);
+
+}
+
+body{
+font-family:Arial;
+background:#f0f0f0;
+text-align:center;
+}
+
+button{
+padding:10px;
+margin:10px;
+cursor:pointer;
+}
+
+#blogs{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.blog{
+background:white;
+width:300px;
+margin:20px;
+padding:10px;
+border-radius: 20px;
+}
+
+img{
+width:100%;
+border-radius: 10px;
+}
+
+header{
+    background:#2c3e50;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<header><h1>My Travel Blog</h1></header>
+
+
+<button onclick="showAdventure()">Adventure</button>
+<button onclick="showChill()">Chill</button>
+
+
+<div id="blogs"></div>
+
+
+<script>
+
+
+function showAdventure(){
+
+document.getElementById("blogs").innerHTML =
+
+`
+
+<div class="blog">
+<img src="Kedarnath trek.jpg">
+<h3>Kedarnath Trek</h3>
+<p>The Kedarnath trek was the most challenging and rewarding journey of my life. Walking long distances in cold weather tested my strength and patience. The mountain views were breathtaking and gave me motivation to continue. Every step felt meaningful. When I finally reached the temple, I felt proud and emotional. The spiritual atmosphere and peaceful surroundings were powerful. The experience taught me endurance and gave me confidence. It was not just a trek, but a personal journey. Kedarnath gave me memories, strength, and peace that I will never forget.</p>
+<a href="https://maps.google.com?q=kedarnath" target="_blank">
+📍Location
+</a>
+</div>
+
+<div class="blog">
+<img src="Ladakh.jpg">
+<h3>Ladakh Trip</h3>
+<p>My Ladakh trip was the greatest adventure I have ever experienced. Riding through high mountains and rough roads was thrilling. The cold desert, blue lakes, and clear skies looked unreal. Pangong Lake was the most beautiful place I saw. The silence and vast landscapes made me feel small but peaceful. The journey was difficult, but every moment was worth it. Meeting locals and seeing their simple life was inspiring. Ladakh was not just a destination, but an adventure that changed my perspective and gave me unforgettable memories.</p>
+<a href="https://maps.google.com?q=ladakh" target="_blank">
+📍Location
+</a>
+</div>
+
+<div class="blog">
+<img src="river rafting.jpg">
+<h3>River Rafting</h3>
+<p>River rafting in Rishikesh was full of excitement and adrenaline. The fast-flowing river and strong rapids made my heart race. Working together with the team made it even more fun. The cold water splashing on my face felt refreshing. At some points, the river was calm, and I could enjoy the mountain views. The mix of thrill and beauty was perfect. I felt brave and alive during the experience. It was scary at first, but later it became pure fun. River rafting was one of the most exciting adventures of my life.</p>
+<a href="https://maps.google.com?q=rishikesh" target="_blank">
+📍Location
+</a>
+</div>
+
+`;
+
+}
+
+
+
+function showChill(){
+
+document.getElementById("blogs").innerHTML =
+
+`
+
+<div class="blog">
+<img src="udaipur.jpg">
+<h3>Udaipur</h3>
+<p>My trip to Udaipur was peaceful and refreshing. The beautiful lakes, especially Lake Pichola, created magical sunset views. I enjoyed sitting near the water, watching boats and the glowing City Palace. The narrow streets were full of culture, colors, and delicious food. The calm atmosphere made it perfect for relaxing and escaping busy life. Exploring the palaces made me feel like I was living in royal times. The cool breeze at night and quiet surroundings made the experience unforgettable. Udaipur truly felt like the perfect city to slow down, relax, and enjoy beauty.</p>
+<a href="https://maps.google.com?q=udaipur" target="_blank">
+📍Location
+</a>
+</div>
+
+
+
+<div class="blog">
+<img src="goa.jpg">
+<h3>Goa</h3>
+<p>My Goa trip was full of fun and relaxation. The beaches were beautiful, with soft sand and endless ocean views. I enjoyed watching sunsets, walking along the shore, and feeling the cool sea breeze. The vibe was carefree and refreshing. Trying water sports and local seafood made the experience even better. Nights were lively, with music and lights everywhere. At the same time, peaceful beaches gave moments to relax and think. Goa gave the perfect balance of excitement and calm. It was a place where I forgot stress and just enjoyed every moment.</p>
+<a href="https://maps.google.com?q=goa" target="_blank">
+📍Location
+</a>
+</div>
+
+
+
+<div class="blog">
+<img src="manali.jpg">
+<h3>Manali</h3>
+<p>My Manali trip was like entering a dream. Snow-covered mountains, cold air, and beautiful valleys surrounded me everywhere. I loved sitting near the Beas River and enjoying the peaceful sound of flowing water. The cool weather was refreshing and different from city heat. Exploring Solang Valley and seeing snow for the first time was magical. The mountain views made me feel calm and happy. Walking in the quiet hills gave me time to think and relax. Manali was the perfect mix of adventure and peace, and I will always remember its beauty.</p>
+<a href="https://maps.google.com?q=manali" target="_blank">
+📍Location
+</a>
+</div>
+
+`;
+
+}
+
+showAdventure();
+
+
+</script>
+</body>
+</html>
