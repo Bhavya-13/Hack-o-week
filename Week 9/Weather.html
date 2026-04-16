@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Weather App</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.weather-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    width: 330px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    width: 65%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #4facfe;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00c6ff;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+.weather-icon {
+    width: 80px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="weather-box">
+    <h2>🌍 Weather Forecast</h2>
+    <input type="text" id="city" placeholder="Enter city name">
+    <button onclick="getWeather()">Search</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+async function getWeather() {
+
+    const city = document.getElementById("city").value;
+    const apiKey = "1019375ce8684a9780644047260204"; 
+
+    if (!city) {
+        alert("Please enter a city!");
+        return;
+    }
+
+    try {
+        const response = await fetch(
+            `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`
+        );
+
+        const data = await response.json();
+
+        if (data.error) {
+            document.getElementById("result").innerHTML = "City not found!";
+            return;
+        }
+
+        document.getElementById("result").innerHTML = `
+            <h3>${data.location.name}, ${data.location.country}</h3>
+            <img class="weather-icon" src="https:${data.current.condition.icon}">
+            <p>🌡 Temperature: ${data.current.temp_c}°C</p>
+            <p>🌤 Condition: ${data.current.condition.text}</p>
+            <p>💧 Humidity: ${data.current.humidity}%</p>
+            <p>💨 Wind: ${data.current.wind_kph} km/h</p>
+            <p>🕒 Local Time: ${data.location.localtime}</p>
+        `;
+
+    } catch (error) {
+        document.getElementById("result").innerHTML = "Error fetching weather!";
+    }
+}
+</script>
+
+</body>
+</html>
